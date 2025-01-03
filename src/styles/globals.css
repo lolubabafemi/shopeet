@@ -3,19 +3,43 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --brand-primary: #d3ac2b;
+  --brand-primary-light: #f0d88b;
+  --brand-primary-dark: #755c08;
+  --brand-secondary: #cbd0d8;
+  --brand-accent: #f4f3ea;
+  --brand-dark: #333d51;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  background: var(--brand-accent);
+  user-select: none;
+}
+
+/* link animation */
+.link {
+  width: fit-content;
+  position: relative;
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--brand-accent);
+  transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  -moz-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  -webkit-transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover::before {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
 }
