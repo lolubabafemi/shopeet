@@ -53,7 +53,7 @@ export const Footer = () => {
           <p>Nigeria</p>
         </div>
         <div className="flex flex-col items-start gap-5 lg:flex-row lg:items-center">
-          <Link href="" className="link">
+          <Link href="/help-center/privacy-policy" className="link">
             Privacy
           </Link>
           •

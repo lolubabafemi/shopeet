@@ -9,12 +9,20 @@ export const Header = () => {
         <div>
           <h1 className="text-brand-dark text-[24px] font-bold">Shopeet</h1>
         </div>
+        <div>
+          <div>
+            <input type="text" placeholder="search items here" className="bg-transparent"/>
+          </div>
+        </div>
         <div className="flex gap-5">
           {header_icons.map((links, index) => (
-           <Link href={links.url} className="flex items-center gap-2">
-           <links.icon size={25} className="text-brand-primary p-[5px] items-center rounded-full"/>
-           <p className="text-[18px]">{links.name}</p>
-           </Link>
+            <Link href={links.url} className="flex items-center gap-2">
+              <links.icon
+                size={25}
+                className="text-brand-primary p-[5px] items-center rounded-full"
+              />
+              <p className="text-[18px]">{links.name}</p>
+            </Link>
           ))}
         </div>
       </div>
